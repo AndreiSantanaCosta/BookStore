@@ -13,8 +13,7 @@ public class Produto {
 	private String titulo;
 	private String descricao;
 	private int paginas;
-	
-	
+
 	public String getTitulo() {
 		return titulo;
 	}
@@ -33,13 +32,11 @@ public class Produto {
 	public void setPaginas(int paginas) {
 		this.paginas = paginas;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Produto [titulo=" + titulo + ", descricao=" + descricao + ", paginas=" + paginas + "]";
 	}
-	
-	
-	
-	
+
 }
+

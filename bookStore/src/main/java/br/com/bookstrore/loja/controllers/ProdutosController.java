@@ -10,19 +10,19 @@ import br.com.bookstrore.loja.models.Produto;
 @Controller
 public class ProdutosController {
 	
-	@Autowired
-	private ProdutoDAO produtoDao;
 	
+	@Autowired
+	private ProdutoDAO dao;
+
 	@RequestMapping("/produtos/form")
 	public String form() {
 		return "produtos/form";
 	}
 	
 	@RequestMapping("/produtos")
-	public String grava(Produto produto) {
+	public String gravar(Produto produto){
 		System.out.println(produto);
-		produtoDao.gravar(produto);
-		
-		return "ok";
+		dao.gravar(produto);
+		return "/produtos/ok";
 	}
 }
