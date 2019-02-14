@@ -26,14 +26,14 @@ public class JPAConfiguration {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setUsername("root");
 		dataSource.setPassword("112233");
-		dataSource.setUrl("jdbc:mysql://localhost/bookstore");
-        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/bookstore?useTimezone=true&serverTimezone=UTC");
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
 		factoryBean.setDataSource(dataSource);
 		
 		Properties properties = new Properties();
-		properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+		properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL57Dialect");
 		properties.setProperty("hibernate.show_sql", "true");
-		properties.setProperty("hibernate.hbm2ddl.auto", "update");
+		properties.setProperty("hibernate.hbm2ddl.auto", "create");
 		
 		factoryBean.setJpaProperties(properties);
 		factoryBean.setPackagesToScan("br.com.bookstrore.loja.models");
