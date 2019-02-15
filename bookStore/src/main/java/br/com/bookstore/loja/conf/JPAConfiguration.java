@@ -1,4 +1,4 @@
-package br.com.bookstrore.loja.conf;
+package br.com.bookstore.loja.conf;
 
 import java.util.Properties;
 
@@ -31,12 +31,12 @@ public class JPAConfiguration {
 		factoryBean.setDataSource(dataSource);
 		
 		Properties properties = new Properties();
-		properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL57Dialect");
+		properties.setProperty("hibernate.dialect.Dialect", "org.hibernate.dialect.MySQL5Dialect");
 		properties.setProperty("hibernate.show_sql", "true");
 		properties.setProperty("hibernate.hbm2ddl.auto", "create");
 		
 		factoryBean.setJpaProperties(properties);
-		factoryBean.setPackagesToScan("br.com.bookstrore.loja.models");
+		factoryBean.setPackagesToScan("br.com.bookstore.loja.models");
 		
 		return factoryBean;
 	}

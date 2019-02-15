@@ -1,12 +1,14 @@
-package br.com.bookstrore.loja.conf;
+package br.com.bookstore.loja.conf;
 
+import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-import br.com.bookstrore.loja.DAOs.ProdutoDAO;
-import br.com.bookstrore.loja.controllers.HomeController;
+import br.com.bookstore.loja.DAOs.ProdutoDAO;
+import br.com.bookstore.loja.controllers.HomeController;
 
 @EnableWebMvc
 @ComponentScan(basePackageClasses= {HomeController.class, ProdutoDAO.class})
@@ -18,6 +20,16 @@ public class AppWebConfiguration {
 		resolver.setPrefix("/WEB-INF/views/");
 		resolver.setSuffix( ".jsp");
 		return resolver;
+	}
+	
+	@Bean
+	public MessageSource messageSource() {
+		ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
+		messageSource.setBasename("/WEB-INF/messages");
+		messageSource.setDefaultEncoding("UTF-8");
+		messageSource.setCacheSeconds(1);
+		
+		return messageSource;
 	}
 
 }

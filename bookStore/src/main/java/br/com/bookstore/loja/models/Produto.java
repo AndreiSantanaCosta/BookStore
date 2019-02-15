@@ -1,4 +1,4 @@
-package br.com.bookstrore.loja.models;
+package br.com.bookstore.loja.models;
 
 import java.util.List;
 
@@ -13,7 +13,10 @@ public class Produto {
 	
 	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
+	
 	private String titulo;
+	
+	
 	private String descricao;
 	private int paginas;
 	

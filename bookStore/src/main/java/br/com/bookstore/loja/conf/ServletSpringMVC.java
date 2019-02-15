@@ -1,4 +1,4 @@
-package br.com.bookstrore.loja.conf;
+package br.com.bookstore.loja.conf;
 
 import javax.servlet.Filter;
 

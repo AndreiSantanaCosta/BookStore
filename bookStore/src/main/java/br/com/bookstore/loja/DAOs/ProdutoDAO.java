@@ -1,4 +1,4 @@
-package br.com.bookstrore.loja.DAOs;
+package br.com.bookstore.loja.DAOs;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.bookstrore.loja.models.Produto;
+import br.com.bookstore.loja.models.Produto;
 
 @Repository
 @Transactional
@@ -17,7 +17,7 @@ public class ProdutoDAO {
 	@PersistenceContext
 	private EntityManager manager;
 	
-	public void gravar(Produto produto) {
+	public void grava(Produto produto) {
 		manager.persist(produto);
 	}
 

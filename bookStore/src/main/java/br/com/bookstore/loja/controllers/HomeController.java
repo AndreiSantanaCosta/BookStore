@@ -1,4 +1,4 @@
-package br.com.bookstrore.loja.controllers;
+package br.com.bookstore.loja.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
